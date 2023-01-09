@@ -1,7 +1,11 @@
 var apiKey = "IIgtBoGEsnf68Me23pXpWGZnkn5vaiyA";
 var city = 'Brunswick'; //takes input from search bar //Brunswick
 var locationKey;
-
+var maxTemp;
+var maxUnit; 
+var minTemp;
+var minUnit;
+var forecastDate;
 
 
 function getApi(){
@@ -30,6 +34,8 @@ function getApi(){
 
 function getForecastApi(){
     console.log(locationKey);
+    var dateArray;
+    var newDate;
     // make call to another api using location key
 
     //var apiKey = "IIgtBoGEsnf68Me23pXpWGZnkn5vaiyA";
@@ -40,7 +46,32 @@ function getForecastApi(){
         return response.json();
     })
     .then(function(data){
-        console.log(data);
+        //console.log(data.DailyForecasts[0].Temperature);
+
+        for(var i=0; i < 5; i++){
+            //console.log('Test');
+
+            forecastDate = data.DailyForecasts[i].Date;
+            dateArray = forecastDate.split("T")
+            newDate = dateArray[0]
+
+            maxTemp = data.DailyForecasts[i].Temperature.Maximum.Value
+            maxUnit = data.DailyForecasts[i].Temperature.Maximum.Unit
+
+            maxTemp = maxTemp + " " +  maxUnit;
+
+            minTemp = data.DailyForecasts[i].Temperature.Minimum.Value
+            minUnit = data.DailyForecasts[i].Temperature.Minimum.Unit
+
+            minTemp = minTemp + " " + minUnit;
+
+            console.log(newDate);
+            console.log(maxTemp);
+            console.log(minTemp);
+
+            
+        }
+
     });
 }
 
