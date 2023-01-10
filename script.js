@@ -36,6 +36,10 @@ function getForecastApi(){
     console.log(locationKey);
     var dateArray;
     var newDate;
+    var weatherContent = document.querySelector('#container-weather');
+    
+    
+
     // make call to another api using location key
 
     //var apiKey = "IIgtBoGEsnf68Me23pXpWGZnkn5vaiyA";
@@ -65,10 +69,28 @@ function getForecastApi(){
 
             minTemp = minTemp + " " + minUnit;
 
-            console.log(newDate);
+            console.log(newDate); // replace with creating div tags for each result 
             console.log(maxTemp);
             console.log(minTemp);
 
+            // card container for the weather forecast body 
+            var resultCard = document.createElement('div'); // card // csss for this card
+
+            // body container for forecast content 
+            var resultBody = document.createElement('div'); // body of the card // css for body card 
+
+            resultCard.append(resultBody); // appends the body to that card 
+
+            var titleEl = document.createElement('h3'); // creates the elemnets fior the body
+            titleEl.textContent = "Weather Forecast";
+            
+            var bodyContentEl = document.createElement('p');
+            bodyContentEl.innerHTML = '<strong>Date:</strong>' + newDate + '<br/>';
+            bodyContentEl.innerHTML += '<strong>Maximum Temp:</strong>' + maxTemp + '</br>';
+            bodyContentEl.innerHTML += '<strong>Minimum Temp:</strong>' + minTemp + '</br>';
+
+            resultBody.append(titleEl, bodyContentEl); // appends the date, temp to the body 
+            weatherContent.append(resultCard); // append the card to the div in the html 
             
         }
 
