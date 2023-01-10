@@ -69,9 +69,12 @@ function getForecastApi(){
 
             minTemp = minTemp + " " + minUnit;
 
+            var icon = 'https://developer.accuweather.com/weather-icons/' + i + '.Icon';
+
             console.log(newDate); // replace with creating div tags for each result 
             console.log(maxTemp);
             console.log(minTemp);
+            console.log(icon);
 
             // card container for the weather forecast body 
             var resultCard = document.createElement('div'); // card // csss for this card
