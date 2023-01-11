@@ -1,14 +1,28 @@
 var apiKey = "IIgtBoGEsnf68Me23pXpWGZnkn5vaiyA";
-var city = 'Brunswick'; //takes input from search bar //Brunswick
+var city; //takes input from search bar //Brunswick
+var submitButtonEl = document.getElementById('search-btn-1');
 var locationKey;
 var maxTemp;
 var maxUnit; 
 var minTemp;
 var minUnit;
 var forecastDate;
+var searchValue;
 
 
-function getApi(){
+submitButtonEl.addEventListener('click',function(){
+    //console.log("Test click"); 
+
+    var searchInputVal = document.getElementById('search-location-1').value;
+    //console.log(searchInputVal); 
+    getApi(searchInputVal) 
+
+})
+
+function getApi(searchValue){
+
+    //console.log(searchValue); 
+    city = searchValue;
     var requestUrl = "http://dataservice.accuweather.com/locations/v1/cities/autocomplete?q=" + city + "&apikey=" + apiKey;
 
     fetch(requestUrl)
@@ -100,6 +114,7 @@ function getForecastApi(){
     });
 }
 
-getApi();
+//getApi();
+
 
 
