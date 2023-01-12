@@ -116,5 +116,80 @@ function getForecastApi(){
 
 //getApi();
 
+window.onload = initMap;
 
+let map;
+let service;
+let locationResults;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -37.8136, lng: 144.9631 },
+    zoom: 13,
+  });
+
+  var marker = new google.maps.Marker({
+    position: { lat: -37.8136, lng: 144.9631 },
+    map: map,
+  });
+
+  function moveToLocation() {
+    var location = document.getElementById("search-location-1").value;
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ address: location }, function (results, status) {
+      if (status === "OK") {
+        map.setCenter(results[0].geometry.location);
+        locationResults = results[0].geometry.location;
+        searchWalkingTrails();
+      } else {
+        alert("Geocode was not successful for this location");
+      }
+    });
+  }
+
+  function searchWalkingTrails() {
+    var request = {
+      location: locationResults,
+      radius: 10000, // 10 km
+      types: ["park"],
+    };
+    service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, callback);
+  }
+
+  function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        document.getElementById("container trail").innerHTML = "";
+        var counter =0;
+      for (var i = 0; i < results.length; i++) {
+        if (counter >= 3) {
+            break;
+        }
+        var place = results[i];
+        createMarker(results[i]);
+        console.log(place);
+        var result = document.createElement("div");
+        result.classList.add("result-item");
+        result.innerHTML += "<img src='" + place.photos[0].getUrl() + "' alt='" + place.name + "'>";
+        result.innerHTML += "<p>" + place.name + "</p>";
+        result.innerHTML += "<p>" + place.vicinity + "</p>";
+        document.getElementById("container trail").appendChild(result);
+        counter++;
+      }
+    }
+  }
+
+  function createMarker(place) {
+    var marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location,
+      icon: './icons8-oak-tree-30.png',
+    });
+  }
+  document
+    .getElementById("search-btn-1")
+    .addEventListener("click", function () {
+      moveToLocation();
+    });
+}
 
