@@ -172,7 +172,7 @@ function initMap() {
 
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        // document.getElementById("container trail").innerHTML = "";
+        document.getElementById("container trail").innerHTML = "";
         var counter =0;
       for (var i = 0; i < results.length; i++) {
         if (counter >= 3) {
