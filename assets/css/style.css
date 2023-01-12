@@ -62,6 +62,18 @@
         flex:1;
     }
 } */
+.bg-img {
+    background-image: url("../images/run.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+
+ 
+
 .img_bar{
     width: 100%;
     min-height: 100vh;
