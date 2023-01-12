@@ -8,6 +8,8 @@ var minTemp;
 var minUnit;
 var forecastDate;
 var searchValue;
+var dayDesc;
+var nightDesc;
 
 
 submitButtonEl.addEventListener('click',function(){
@@ -83,11 +85,19 @@ function getForecastApi(){
 
             minTemp = minTemp + " " + minUnit;
 
-            var icon = 'https://developer.accuweather.com/weather-icons/' + i + '.Icon';
+            //var icon = 'https://developer.accuweather.com/weather-icons/' + i + '.Icon';
+            var icon = 'https://developer.accuweather.com/sites/default/files/12-s.png';
+
+            dayDesc = data.DailyForecasts[i].Day.IconPhrase;
+            nightDesc = data.DailyForecasts[i].Night.IconPhrase;
+
 
             console.log(newDate); // replace with creating div tags for each result 
             console.log(maxTemp);
             console.log(minTemp);
+            console.log(icon);
+            console.log(dayDesc);
+            console.log(nightDesc);
             console.log(icon);
 
             // card container for the weather forecast body 
@@ -102,9 +112,12 @@ function getForecastApi(){
             titleEl.textContent = "Weather Forecast";
             
             var bodyContentEl = document.createElement('p');
+
             bodyContentEl.innerHTML = '<strong>Date:</strong>' + newDate + '<br/>';
             bodyContentEl.innerHTML += '<strong>Maximum Temp:</strong>' + maxTemp + '</br>';
             bodyContentEl.innerHTML += '<strong>Minimum Temp:</strong>' + minTemp + '</br>';
+            bodyContentEl.innerHTML += '<strong>Day:</strong>' + dayDesc + '</br>';
+            bodyContentEl.innerHTML += '<strong>Night:</strong>' + nightDesc + '</br>';
 
             resultBody.append(titleEl, bodyContentEl); // appends the date, temp to the body 
             weatherContent.append(resultCard); // append the card to the div in the html 
