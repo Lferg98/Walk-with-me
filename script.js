@@ -159,7 +159,7 @@ function initMap() {
 
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        document.getElementById("container trail").innerHTML = "";
+        // document.getElementById("container trail").innerHTML = "";
         var counter =0;
       for (var i = 0; i < results.length; i++) {
         if (counter >= 3) {
@@ -183,7 +183,7 @@ function initMap() {
     var marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location,
-      icon: './icons8-oak-tree-30.png',
+      icon: './assets/images/icons8-oak-tree-30.png',
     });
   }
   document
