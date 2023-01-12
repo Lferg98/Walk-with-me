@@ -7,6 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Walk With Me</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+      #map{
+          height: 400px;
+          width: 600px;
+      }
+  </style>
 </head>
 <!-- Body Start from here -->
 
@@ -185,7 +191,7 @@
             <button id="search-btn-1" type="submit" value="submit"> Search </button>
 
         </div>
-
+        <div id="map"></div>
         <div>
             <article class="main">
                 <p>
@@ -197,17 +203,7 @@
             </article>
         </div>
         <!-- Trail Results Container sections Start from here -->
-        <div class="container trail">
-            <section id="trail_1">
-                <h1>Trail 1</h1>
-            </section>
-            <section id="trail_1">
-                <h1>Trail 2</h1>
-            </section>
-            <section id="trail_1">
-                <h1>Trail 3</h1>
-            </section>
-        </div>
+        <div id="container trail"></div>
         <!-- weather forcast section start from here-->
         <div id="container-weather"></div>
 
@@ -222,7 +218,8 @@
         </footer>
 
     </div>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVSCWM9Z_5IKTL7p2jfUX5H9W-LbBK_VM&libraries=places&callback=initMap"
+async defer></script>
     <script src="./script.js"></script>
 
 </body>
