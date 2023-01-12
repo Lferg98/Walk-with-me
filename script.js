@@ -85,8 +85,16 @@ function getForecastApi(){
 
             minTemp = minTemp + " " + minUnit;
 
-            //var icon = 'https://developer.accuweather.com/weather-icons/' + i + '.Icon';
-            var icon = 'https://developer.accuweather.com/sites/default/files/12-s.png';
+            var iconID = data.DailyForecasts[i].Day.Icon
+            //console.log(iconID);
+
+            if(iconID >=1 && iconID <= 9){
+                iconID = '0' + iconID
+                console.log('Inside if');
+                console.log(iconID);
+            }
+
+            var icon = 'https://developer.accuweather.com/sites/default/files/' + iconID + '-s.png';
 
             dayDesc = data.DailyForecasts[i].Day.IconPhrase;
             nightDesc = data.DailyForecasts[i].Night.IconPhrase;
@@ -95,7 +103,6 @@ function getForecastApi(){
             console.log(newDate); // replace with creating div tags for each result 
             console.log(maxTemp);
             console.log(minTemp);
-            console.log(icon);
             console.log(dayDesc);
             console.log(nightDesc);
             console.log(icon);
@@ -111,6 +118,8 @@ function getForecastApi(){
             var titleEl = document.createElement('h3'); // creates the elemnets fior the body
             titleEl.textContent = "Weather Forecast";
             
+            var img = document.createElement('img');
+            img.src = icon;
             var bodyContentEl = document.createElement('p');
 
             bodyContentEl.innerHTML = '<strong>Date:</strong>' + newDate + '<br/>';
@@ -119,7 +128,7 @@ function getForecastApi(){
             bodyContentEl.innerHTML += '<strong>Day:</strong>' + dayDesc + '</br>';
             bodyContentEl.innerHTML += '<strong>Night:</strong>' + nightDesc + '</br>';
 
-            resultBody.append(titleEl, bodyContentEl); // appends the date, temp to the body 
+            resultBody.append(titleEl, img, bodyContentEl); // appends the date, temp to the body 
             weatherContent.append(resultCard); // append the card to the div in the html 
             
         }
