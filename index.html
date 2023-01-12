@@ -8,6 +8,14 @@
     <title>Walk With Me</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="assets/css/style.css">"
+
+    <style>
+      #map{
+          height: 400px;
+          width: 600px;
+      }
+  </style>
+
 </head>
 <!-- Body Start from here -->
 
@@ -204,6 +212,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="column is-3">
                     <div class="card">
                         <div class="card-image">
@@ -390,39 +399,14 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Add Banner Image here - Banner Image section start here-->
+<!-- Add Banner Image here - Banner Image section start here-->
     <div class="img_bar">
         <form action="" class="search-bar">
             <input type="text" placeholder="search anything" name="">
             <button type="submit"><img src="./assets/images/search.png"></button>
         </form>
     </div>
+
     <!-- Trail Results Container sections Start from here -->
     <div class="container trail">
         <section id="trail_1">
@@ -437,19 +421,58 @@
     </div>
 
 
+   
+<div class="wrapper">
+        <!-- Header  -->
+        <header class="header">
+            <h1>Hike Finder</h1>
+        </header>
+        <!-- Nav bar Start from here -->
+        <nav>
+            <ul>
+                <li>My Trails</li>
+            </ul>
+        </nav>
+
+        <!-- Add Banner Image here - Banner Image section start here-->
+
+        <div class="img_bar">
             
+            <input type="text" id="search-location-1"  placeholder="search anything" />
+            <button id="search-btn-1" type="submit" value="submit"> Search </button>
+
+        </div>
+        <div id="map"></div>
+        <div>
+            <article class="main">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur necessitatibus explicabo animi
+                    hic, nam minima debitis tempora temporibus esse! Itaque maiores voluptates, qui odit est voluptate
+                    exercitationem odio repudiandae, obcaecati similique possimus doloribus eum ut quod neque.
+                    Reiciendis sunt, sed, iusto cumque distinctio laborum officia impedit in quod incidunt iste?
+                </p>
+            </article>
+        </div>
+        <!-- Trail Results Container sections Start from here -->
+        <div id="container trail"></div>
+        <!-- weather forcast section start from here-->
+        <div id="container-weather"></div>
 
 
+     
+        
+        <!-- Footer section start from here -->
+        <footer class="footer">
+            <form action="mytrials.html" method="POST">
+                <input type="submit"/>
+            </form>
+        </footer>
 
- 
-                <!-- Footer section start from here -->
-                <footer class="footer">
-                    <h1>footer</h1>
-                </footer>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVSCWM9Z_5IKTL7p2jfUX5H9W-LbBK_VM&libraries=places&callback=initMap"
+async defer></script>
+    <script src="./script.js"></script>
 
-            </div>
-
-            <script src="./script.js"></script>
 
 </body>
 <!-- Body End -->
