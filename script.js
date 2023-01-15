@@ -108,8 +108,8 @@ function getForecastApi(){
             console.log(icon);
 
             // card container for the weather forecast body 
-            var resultCard = document.createElement('div'); // card // csss for this card
-
+            var resultCard = document.createElement('div'); // card // csss for this card  // use addclass on this dov class =  content
+            resultCard.classList.add('content');
             // body container for forecast content 
             var resultBody = document.createElement('div'); // body of the card // css for body card 
 
@@ -118,9 +118,10 @@ function getForecastApi(){
             var titleEl = document.createElement('h3'); // creates the elemnets fior the body
             titleEl.textContent = "Weather Forecast";
             
-            var img = document.createElement('img');
+            var img = document.createElement('img'); // revert to previous  and then addclass image is -4by3
+            img.classList.add('image is-4by3');
             img.src = icon;
-            var bodyContentEl = document.createElement('p');
+            var bodyContentEl = document.createElement('p')
 
             bodyContentEl.innerHTML = '<strong>Date:</strong>' + newDate + '<br/>';
             bodyContentEl.innerHTML += '<strong>Maximum Temp:</strong>' + maxTemp + '</br>';
@@ -188,23 +189,21 @@ function initMap() {
 
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        document.getElementById("container trail").innerHTML = "";
-        var counter =0;
-      for (var i = 0; i < results.length; i++) {
-        if (counter >= 3) {
-            break;
+        var counter = 0;
+        var images = document.getElementsByClassName("image is-4by3");
+        var contents = document.getElementsByClassName("content");
+        for (var i = 0; i < results.length; i++) {
+            if (counter >= 3) {
+                break;
+            }
+            var place = results[i];
+            createMarker(results[i]);
+            console.log(place);
+            images[counter].innerHTML = "<img src='" + place.photos[0].getUrl() + "' alt='" + place.name + "'>";
+            contents[counter].innerHTML = "<p>" + place.name + "</p>";
+            contents[counter].innerHTML += "<p>" + place.vicinity + "</p>";
+            counter++;
         }
-        var place = results[i];
-        createMarker(results[i]);
-        console.log(place);
-        var result = document.createElement("div");
-        result.classList.add("result-item");
-        result.innerHTML += "<img src='" + place.photos[0].getUrl() + "' alt='" + place.name + "'>";
-        result.innerHTML += "<p>" + place.name + "</p>";
-        result.innerHTML += "<p>" + place.vicinity + "</p>";
-        document.getElementById("container trail").appendChild(result);
-        counter++;
-      }
     }
   }
 
