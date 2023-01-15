@@ -258,24 +258,26 @@ generateBtn.addEventListener("click", function(){
 
 // close button create
 
-   var btn = document.createElement("button");
-   btn.innerHTML = 'Clear';
-   btn.classList.add("btn");
-   btn.classList.add("clear");
-   var clear = document.querySelector(".sec_1");
-   clear.appendChild(btn);
-   
-   const clear_btn = document.querySelector('.clear');
-      clear_btn.addEventListener('click', function() {
-       let facts = document.querySelector(".facts");
-       facts.innerHTML = '';
-       clear_btn.parentNode.removeChild(clear_btn);
-      })
+var btn = document.createElement("button");
+btn.innerHTML = 'Clear';
+btn.classList.add("btn");
+btn.classList.add("clear");
+btn.classList.add("button");
+btn.classList.add("is-danger")
+var clear = document.querySelector(".sec_1");
+clear.appendChild(btn);
+
+var clear_btn = document.querySelector('.clear');
+   clear_btn.addEventListener('click', function() {
+    let facts = document.querySelector(".facts");
+    facts.innerHTML = '';
+    clear_btn.parentNode.removeChild(clear_btn);
+   })
 
 
 
-   for (var i=0; i<num_facts.value; i++){
-       fetchFacts();
-   }
-   
+for (var i=0; i<num_facts.value; i++){
+    fetchFacts();
+}
+
 })
