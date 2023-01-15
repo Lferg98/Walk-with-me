@@ -11,6 +11,11 @@ var searchValue;
 var dayDesc;
 var nightDesc;
 
+// This section added by Don Ishan 
+var generateBtn = document.querySelector('.generate_btn');
+var num_facts = document.querySelector("#num_facts");
+
+
 
 submitButtonEl.addEventListener('click',function(){
     //console.log("Test click"); 
@@ -221,3 +226,57 @@ function initMap() {
     });
 }
 
+
+
+// Fast Fact Section Start from here 
+generateBtn.addEventListener("click", function(){
+   
+
+  if(parseInt(num_facts.value) > 50){
+    alert("MAX IS 50 ..!")
+  }
+ 
+  function fetchFacts(){
+
+   fetch(`https://api.api-ninjas.com/v1/facts?limit=1`, {
+       method: 'GET',
+       headers: {
+           'X-Api-Key': 'QXXx6GBxBEhrdby8y5MvX9DHdQTW7ZDpkjziXBOC',
+       },  
+   })
+   .then(response => response.text() ) // JSON strings convert to JavaScript Object
+   .then(data => {
+       var factsRes = JSON.parse(data);
+       console.log(factsRes);
+       let para = document.createElement("p");
+       let node = document.createTextNode(factsRes);
+       para.appendChild(node);
+
+       let factElement = document.querySelector(".facts");
+       factElement.appendChild(para);
+
+   })
+   .catch(err => console.log(err));
+}
+
+// close button create
+
+   var btn = document.createElement("button");
+   btn.innerHTML = 'Clear';
+   btn.classList.add("btn");
+   btn.classList.add("clear");
+   var clear = document.querySelector(".sec_1");
+   clear.appendChild(btn);
+   
+   const clear_btn = document.querySelector('.clear');
+      clear_btn.addEventListener('click', function() {
+       let facts = document.querySelector(".facts");
+       facts.innerHTML = '';
+       clear_btn.parentNode.removeChild(clear_btn);
+      })
+
+   for (var i=0; i<num_facts.value; i++){
+       fetchFacts();
+   }
+   
+})
