@@ -57,7 +57,7 @@ function getForecastApi(){
     console.log(locationKey);
     var dateArray;
     var newDate;
-    var weatherContent = document.querySelector('#container-weather');
+    var weatherContent = document.querySelector('.container-weather');
     
     
 
@@ -114,18 +114,24 @@ function getForecastApi(){
 
             // card container for the weather forecast body 
             var resultCard = document.createElement('div'); // card // csss for this card  // use addclass on this dov class =  content
-            resultCard.classList.add('content');
+            var content = document.querySelector('column is-3')
+            resultCard.classList.add('container-weather','card', 'card-content','content');
+            
             // body container for forecast content 
-            var resultBody = document.createElement('div'); // body of the card // css for body card 
+            var resultBody = document.createElement("div"); // body of the card // css for body card 
 
             resultCard.append(resultBody); // appends the body to that card 
 
             var titleEl = document.createElement('h3'); // creates the elemnets fior the body
             titleEl.textContent = "Weather Forecast";
             
-            var img = document.createElement('img'); // revert to previous  and then addclass image is -4by3
-            img.classList.add('image is-4by3');
+            var img = document.createElement("img"); // revert to previous  and then addclass image is -4by3
+            
+            img.classList.add('container-weather','card','card-image');
+          
             img.src = icon;
+
+
             var bodyContentEl = document.createElement('p')
 
             bodyContentEl.innerHTML = '<strong>Date:</strong>' + newDate + '<br/>';
