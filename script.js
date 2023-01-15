@@ -10,9 +10,11 @@ var forecastDate;
 var searchValue;
 var dayDesc;
 var nightDesc;
+
 // This section added by Don Ishan 
 var generateBtn = document.querySelector('.generate_btn');
 var num_facts = document.querySelector("#num_facts");
+
 
 
 submitButtonEl.addEventListener('click',function(){
@@ -225,6 +227,7 @@ function initMap() {
 }
 
 
+
 // Fast Fact Section Start from here 
 generateBtn.addEventListener("click", function(){
    
@@ -271,8 +274,6 @@ generateBtn.addEventListener("click", function(){
        facts.innerHTML = '';
        clear_btn.parentNode.removeChild(clear_btn);
       })
-
-
 
    for (var i=0; i<num_facts.value; i++){
        fetchFacts();
