@@ -7,37 +7,431 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Walk With Me</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">"
+
+    <style>
+      #map{
+          height: 400px;
+          width: 600px;
+      }
+  </style>
+
 </head>
 <!-- Body Start from here -->
 
 <body>
-    <nav class="navbar has-shadow is-light is-fixed-top" role="navigation" aria-label="main navigation">
-        <!-- Logo/ Brand -->
-        <div class="navbar-brand">
-            <a class="navbar-item">
-                <img src="assets/images/Logo-Walk-with-me.png" alt="site logo" style="max-height: 100px"
-                    class="py-2 px-2">
-            </a>
-        </div>
+    <header>
+        <!--nav bar starts here-->
+        <div class="container">
+            <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+                <!-- Logo/ Brand -->
+                <div class="navbar-brand">
+                    <div class="navbar-item">
+                        <span class="subtitle has-text-primary">Walk With Me</span>
+                    </div>
 
-        <div class="navbar-menu" id="nav-links">
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a href="" class="button is-black">Fast Fact</a>
-                        <a href="mytrials.html" class="button is-primary">My Trails</a>
+                    <img src="assets/images/Logo-Walk-with-me.png" alt="site logo" style="max-height: 100px"
+                        class="py-2 px-2">
+
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                        data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+
+                <div class="navbar-menu" id="nav-links">
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a href="#fast_fact" class="button is-black">Fast Fact</a>
+                                <a href="mytrials.html" class="button is-primary"><strong>My Trails</strong></a>
+                            </div>
+                        </div>
+            </nav>
+        </div>
+    </header>
+    <!--hero area-->
+    <section class="hero hero-landing is-large">
+        <div class="bg-img">
+            <div class="hero-body">
+                <div class="container">
+
+                    <h1 class="title is-2 is-bold is-white"> Walk With Me </h1>
+                    <h2 class="subtitle is-6 is active">
+                        Search for parks in your desired area and get the weather forecast for the day.
+                    </h2>
+                    <div class="control is-active">
+                        <input class="input is-large" type="text" placeholder="Search for a park">
+                        <button class="button is-large is-primary">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!--Placeholder section for Weather Map-->
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-6">
+                    <h1 class="is-size-1">Placeholder</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nam qui fugiat cupiditate voluptas
+                        a quas magnam vero, inventore ut odio accusamus. Quisquam possimus dolor, distinctio earum eos
+                        sit sunt!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Parks Cards-->
+    <div class="section has-background-white-ter">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <h2 class="is-size-2 is-family-secondary has-text-centered">Explore the parks in your area </h2>
+                    <p class="has-text-centered">
+                        Understand more about these exciting parks.
+                    </p>
+                </div>
+            </div>
+
+            <div class="columns mt-3">
+                <div class="column is-4">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://source.unsplash.com/hLyd1LukQ7E" alt="butterfly image"
+                                    class="modal-button" data-target="modal-image4">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <p class="subtitle">Park</p>
+                                <p>
+                                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit
+                                    non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis
+                                    parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet
+                                    fermentum.
+                                </p>
+                                <a href="#" class="has-text-primary">link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://source.unsplash.com/hLyd1LukQ7E" alt="butterfly image"
+                                    class="modal-button" data-target="modal-image4">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <p class="subtitle">Park</p>
+                                <p>
+                                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit
+                                    non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis
+                                    parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet
+                                    fermentum.
+                                </p>
+                                <a href="#" class="has-text-primary">link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://source.unsplash.com/hLyd1LukQ7E" alt="butterfly image"
+                                    class="modal-button" data-target="modal-image4">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <p class="subtitle">Park</p>
+                                <p>
+                                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit
+                                    non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis
+                                    parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet
+                                    fermentum.
+                                </p>
+                                <a href="#" class="has-text-primary">link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--Weather Cards Section-->
+    <div class="section has-background-dark-ter">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <h2 class="is-size-2 is-family-secondary has-text-centered">5 day forcast</h2>
+                    <p class="has-text-centered">
+                        placeholder.
+                    </p>
+                </div>
+            </div>
+
+            <div class="columns mt-3">
+                <div class="column is-3">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://res.cloudinary.com/ameo/image/upload/v1568711475/pexels-photo-1302883_fjje0f.jpg"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <p class="subtitle">Weather</p>
+                                <p>
+                                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit
+                                    non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis
+                                    parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet
+                                    fermentum.
+                                </p>
+                                <a href="#" class="has-text-primary">link</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-    </nav>
-<<<<<<< HEAD
-    <!-- Add Banner Image here - Banner Image section start here-->
+                <div class="column is-3">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://res.cloudinary.com/ameo/image/upload/v1568711475/pexels-photo-1302883_fjje0f.jpg"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <p class="subtitle">Weather</p>
+                                <p>
+                                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit
+                                    non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis
+                                    parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet
+                                    fermentum.
+                                </p>
+                                <a href="#" class="has-text-primary">link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://res.cloudinary.com/ameo/image/upload/v1568711475/pexels-photo-1302883_fjje0f.jpg"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <p class="subtitle">Weather</p>
+                                <p>
+                                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit
+                                    non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis
+                                    parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet
+                                    fermentum.
+                                </p>
+                                <a href="#" class="has-text-primary">link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://res.cloudinary.com/ameo/image/upload/v1568711475/pexels-photo-1302883_fjje0f.jpg"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <p class="subtitle">Weather</p>
+                                <p>
+                                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit
+                                    non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis
+                                    parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet
+                                    fermentum.
+                                </p>
+                                <a href="#" class="has-text-primary">link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-3">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://res.cloudinary.com/ameo/image/upload/v1568711475/pexels-photo-1302883_fjje0f.jpg"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <p class="subtitle">Weather</p>
+                                <p>
+                                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit
+                                    non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis
+                                    parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet
+                                    fermentum.
+                                </p>
+                                <a href="#" class="has-text-primary">link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+ <!--Fast Fact Cards-->
+<div class="section has-background-white-ter">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half" id="fast_fact"> 
+
+                    <h2 class="is-size-2 is-family-secondary has-text-centered">Fast Fast Generator</h2>
+                    <p class="has-text-centered">
+                        Understand more about these exciting parks.
+                    </p>
+                    <div class="sec_1" role="dialog">
+                        <div class="card-body">
+                            <label>Number of Facts</label>
+                            <input type="number" id="num_facts">
+                            <small id="max-fact" > MAX:50</Main></small>
+                        </div>
+                        <div class="buttons">
+                            <button type="button" class="generate_btn" >Generate</button>
+                        </div>
+                        <div class="facts">
+                            <table>
+                                <td><p></p></td>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+<!--ADD FAST FACT BUTTON-->
+            <div class="columns mt-3">
+                <div class="column is-4">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://source.unsplash.com/hLyd1LukQ7E" alt="butterfly image"
+                                    class="modal-button" data-target="modal-image4">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <p class="subtitle">Fact</p>
+                                <p>
+                                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit
+                                    non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis
+                                    parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet
+                                    fermentum.
+                                </p>
+                                <a href="#" class="has-text-primary">link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://source.unsplash.com/hLyd1LukQ7E" alt="butterfly image"
+                                    class="modal-button" data-target="modal-image4">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <p class="subtitle">Fact</p>
+                                <p>
+                                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit
+                                    non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis
+                                    parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet
+                                    fermentum.
+                                </p>
+                                <a href="#" class="has-text-primary">link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://source.unsplash.com/hLyd1LukQ7E" alt="butterfly image"
+                                    class="modal-button" data-target="modal-image4">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <p class="subtitle">Fact</p>
+                                <p>
+                                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit
+                                    non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis
+                                    parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet
+                                    fermentum.
+                                </p>
+                                <a href="#" class="has-text-primary">link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+<!-- Add Banner Image here - Banner Image section start here-->
     <div class="img_bar">
         <form action="" class="search-bar">
-           <input type="text" placeholder="search anything" name="">
-           <button type="submit"><img src="./assets/images/search.png"></button>
+            <input type="text" placeholder="search anything" name="">
+            <button type="submit"><img src="./assets/images/search.png"></button>
         </form>
     </div>
+
     <!-- Trail Results Container sections Start from here -->
     <div class="container trail">
         <section id="trail_1">
@@ -50,128 +444,10 @@
             <h1>Trail 3</h1>
         </section>
     </div>
-    <!-- weather forcast section start from here-->
-    <div id="container-weather"></div>
-        
-    
-    <!-- Summary Section Start from here -->
-    <div class="card">
-        <!-- Card header start from here -->
-        <div class="card header">
-            <h1>My Trials</h1>
-=======
-    <!--hero area-->
-    <section class="hero-area">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-11-desktop is-offset-1-desktop">
-                    <h1 class="has-text-white font-tertiary"><br>Walk<br> With Me</h1>
-                        </div>
-            </div>
->>>>>>> fee3d9509c3951c0456e71b1f69cb7bfda2c726f
-        </div>
-        <div class="layer-bg is-full">
-            <img src="assets/images/run.jpg" alt="hero-bg">
-        </div>
-
-    </section>
-
-    <!--Cards-->
-    <section class="container">
-        <div class="columns features">
-          <div class="column is-4">
-            <div class="card is-shady">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://source.unsplash.com/RWnpyGtY1aU" alt="Placeholder image" class="modal-button" data-target="modal-image2">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="content">
-                  <h4>Click on image above</h4>
-                  <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.</p>
-                  <span class="button is-link modal-button" data-target="modal-image2">Image modal</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="column is-4">
-            <div class="card is-shady">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://source.unsplash.com/6Ticnhs1AG0" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="content">
-                  <h4>Tempor orci dapibus faber in.</h4>
-                  <p>Ut venenatis tellus in metus vulputate. Amet consectetur adipiscing elit pellentesque. Sed arcu non odio euismod lacinia at quis risus. Faucibus turpis in eu mi bibendum neque egestas cmonsu songue. Phasellus vestibulum lorem
-                  sed risus.</p>
-                  <span class="button is-link modal-button" data-target="modal-card">Modal Card</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="column is-4 modal-button" data-target="modal-image">
-            <div class="card is-shady">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://res.cloudinary.com/ameo/image/upload/v1568711475/pexels-photo-1302883_fjje0f.jpg" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="content">
-                  <h4>Click anywhere on card</h4>
-                  <p>Imperdiet dui accumsan sit amet nulla facilisi morbi. Fusce ut placerat orci nulla pellentesque dignissim enim. Libero id faucibus nisl tincidunt eget nullam. Commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                  <span class="button is-link modal-button" data-target="modal-image">Image modal</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="columns features">
-          <div class="column is-4 modal-button" data-target="modal-card">
-            <div class="card is-shady">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://res.cloudinary.com/ameo/image/upload/v1568711475/pexels-photo-1302883_fjje0f.jpg" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="content">
-                  <h4>Click anywhere on card to <br>expand into modal card</h4>
-                  <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.</p>
-                  <span class="button is-link modal-button">Modal card</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="column is-4">
-            <div class="card is-shady">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://source.unsplash.com/hLyd1LukQ7E" alt="butterfly image" class="modal-button" data-target="modal-image4">
-                </figure>
-              </div>
-              <div class="card-content  modal-button" data-target="modal-card2">
-                <div class="content">
-                  <h4>Click anywhere on card to <br>expand into modal card - header image expands into bigger image</h4>
-                  <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis.</p>
-                  <span class="button is-link modal-button">Modal card</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      </section>
 
 
-
-
-
-
-    <div class="wrapper">
+   
+<div class="wrapper">
         <!-- Header  -->
         <header class="header">
             <h1>Hike Finder</h1>
@@ -182,7 +458,16 @@
                 <li>My Trails</li>
             </ul>
         </nav>
+
         <!-- Add Banner Image here - Banner Image section start here-->
+
+        <div class="img_bar">
+            
+            <input type="text" id="search-location-1"  placeholder="search anything" />
+            <button id="search-btn-1" type="submit" value="submit"> Search </button>
+
+        </div>
+        <div id="map"></div>
         <div>
             <article class="main">
                 <p>
@@ -194,17 +479,7 @@
             </article>
         </div>
         <!-- Trail Results Container sections Start from here -->
-        <div class="container trail">
-            <section id="trail_1">
-                <h1>Trail 1</h1>
-            </section>
-            <section id="trail_1">
-                <h1>Trail 2</h1>
-            </section>
-            <section id="trail_1">
-                <h1>Trail 3</h1>
-            </section>
-        </div>
+        <div id="container trail"></div>
         <!-- weather forcast section start from here-->
         <div id="container-weather"></div>
 
@@ -219,8 +494,10 @@
         </footer>
 
     </div>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVSCWM9Z_5IKTL7p2jfUX5H9W-LbBK_VM&libraries=places&callback=initMap"
+async defer></script>
     <script src="./script.js"></script>
+
 
 </body>
 <!-- Body End -->
