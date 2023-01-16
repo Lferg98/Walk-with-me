@@ -149,7 +149,7 @@ function getForecastApi(){
 }
 
 //getApi();
-
+// Google Maps API starts here
 window.onload = initMap;
 
 let map;
@@ -157,7 +157,7 @@ let service;
 let locationResults;
 let searches = [];
 let locationSaved = false;
-
+// Display of initial map
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: -37.8136, lng: 144.9631 },
@@ -168,7 +168,7 @@ function initMap() {
     position: { lat: -37.8136, lng: 144.9631 },
     map: map,
   });
-
+// Move map to users search location
   function moveToLocation() {
     if (!locationSaved) {
       locationSaved = true;
@@ -187,7 +187,7 @@ function initMap() {
     });
   }
   }
-
+// searches location area for results with the type "park"
   function searchWalkingTrails() {
     var request = {
       location: locationResults,
@@ -197,7 +197,7 @@ function initMap() {
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, callback);
   }
-
+// displays chosen result information in the weather cards
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         var counter = 0;
@@ -217,7 +217,7 @@ function initMap() {
         }
     }
   }
-
+// adds custom icon to the search results and click event listener on search button
   function createMarker(place) {
     var marker = new google.maps.Marker({
       map: map,
@@ -255,7 +255,7 @@ generateBtn.addEventListener("click", function(){
        var factsRes = JSON.parse(data);
        console.log(factsRes);
        let para = document.createElement("p");
-       let node = document.createTextNode(factsRes);
+       let node = document.createTextNode(factsRes[0].fact);
        para.appendChild(node);
 
        let factElement = document.querySelector(".facts");
