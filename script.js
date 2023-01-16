@@ -57,7 +57,7 @@ function getForecastApi(){
     console.log(locationKey);
     var dateArray;
     var newDate;
-    var weatherContent = document.querySelector('#container-weather');
+    var weatherContent = document.querySelector('.container-weather');
     
     
 
@@ -112,7 +112,32 @@ function getForecastApi(){
             console.log(nightDesc);
             console.log(icon);
 
+
             
+
+
+              // card container for the weather forecast body 
+              var resultCard = document.createElement('div'); // card // csss for this card  // use addclass on this dov class =  content
+              var content = document.querySelector('column is-3')
+              resultCard.classList.add('container-weather','card', 'card-content','content');
+              
+              // body container for forecast content 
+              var resultBody = document.createElement("div"); // body of the card // css for body card 
+  
+              resultCard.append(resultBody); // appends the body to that card 
+  
+              var titleEl = document.createElement('h3'); // creates the elemnets fior the body
+              titleEl.textContent = "Weather Forecast";
+              
+              var img = document.createElement("img"); // revert to previous  and then addclass image is -4by3
+              
+              img.classList.add('container-weather','card','card-image');
+            
+              img.src = icon;
+  
+  
+              var bodyContentEl = document.createElement('p') 
+
             // card container for the weather forecast body 
             var resultCard = document.createElement('div'); // card // csss for this card  // use addclass on this dov class =  content
             var content = document.querySelector('column is-3')
@@ -133,7 +158,11 @@ function getForecastApi(){
             img.src = icon;
 
 
+
             var bodyContentEl = document.createElement('p') 
+            var bodyContentEl = document.createElement('p')
+
+
 
             bodyContentEl.innerHTML = '<strong>Date:</strong>' + newDate + '<br/>';
             bodyContentEl.innerHTML += '<strong>Maximum Temp:</strong>' + maxTemp + '</br>';
@@ -267,22 +296,34 @@ generateBtn.addEventListener("click", function(){
 
 // close button create
 
-   var btn = document.createElement("button");
-   btn.innerHTML = 'Clear';
-   btn.classList.add("btn");
-   btn.classList.add("clear");
-   var clear = document.querySelector(".sec_1");
-   clear.appendChild(btn);
-   
-   const clear_btn = document.querySelector('.clear');
-      clear_btn.addEventListener('click', function() {
-       let facts = document.querySelector(".facts");
-       facts.innerHTML = '';
-       clear_btn.parentNode.removeChild(clear_btn);
-      })
+var btn = document.createElement("button");
+btn.innerHTML = 'Clear';
+btn.classList.add("btn");
+btn.classList.add("clear");
+btn.classList.add("button");
+btn.classList.add("is-danger")
+var clear = document.querySelector(".sec_1");
+clear.appendChild(btn);
+
+var clear_btn = document.querySelector('.clear');
+   clear_btn.addEventListener('click', function() {
+    let facts = document.querySelector(".facts");
+    facts.innerHTML = '';
+    clear_btn.parentNode.removeChild(clear_btn);
+   })
+
+
 
    for (var i=0; i<num_facts.value; i++){
        fetchFacts();
    }
    
 })
+
+// mobile menu
+const burgerIcon = document.querySelector('.burger');
+const navbarMenu = document.querySelector('.navbar-links');
+
+burgerIcon.addEventListener('click', () => {
+    navbarMenu.classList.toggle('is-active');
+});
