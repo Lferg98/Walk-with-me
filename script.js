@@ -113,6 +113,9 @@ function getForecastApi(){
             console.log(icon);
 
 
+            
+
+
               // card container for the weather forecast body 
               var resultCard = document.createElement('div'); // card // csss for this card  // use addclass on this dov class =  content
               var content = document.querySelector('column is-3')
@@ -155,7 +158,10 @@ function getForecastApi(){
             img.src = icon;
 
 
+
+            var bodyContentEl = document.createElement('p') 
             var bodyContentEl = document.createElement('p')
+
 
 
             bodyContentEl.innerHTML = '<strong>Date:</strong>' + newDate + '<br/>';
@@ -193,24 +199,23 @@ function initMap() {
     map: map,
   });
 // Move map to users search location
-  function moveToLocation() {
-    if (!locationSaved) {
-      locationSaved = true;
-      var location = document.getElementById("search-location-1").value;
+function moveToLocation() {
+  var location = document.getElementById("search-location-1").value;
+  if (!searches.includes(location)) {
       searches.push(location);
       localStorage.setItem('Location Search', JSON.stringify(searches));
-    var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ address: location }, function (results, status) {
+  }
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ address: location }, function (results, status) {
       if (status === "OK") {
-        map.setCenter(results[0].geometry.location);
-        locationResults = results[0].geometry.location;
-        searchWalkingTrails();
+          map.setCenter(results[0].geometry.location);
+          locationResults = results[0].geometry.location;
+          searchWalkingTrails();
       } else {
-        alert("Geocode was not successful for this location");
+          alert("Geocode was not successful for this location");
       }
-    });
-  }
-  }
+  });
+}
 // searches location area for results with the type "park"
   function searchWalkingTrails() {
     var request = {
