@@ -7,14 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Walk With Me</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">"
+    <link rel="stylesheet" href="assets/css/style.css">
 
-    <style>
-      #map{
-          height: 400px;
-          width: 600px;
-      }
-  </style>
 
 </head>
 <!-- Body Start from here -->
@@ -22,27 +16,22 @@
 <body>
     <header>
         <!--nav bar starts here-->
-        <div class="container">
+        
             <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
                 <!-- Logo/ Brand -->
                 <div class="navbar-brand">
                     <div class="navbar-item">
-                        <span class="subtitle has-text-primary">Walk With Me</span>
+                        <img src="assets/images/Logo-Walk-with-me.png" alt="site logo" style="max-height: 100px"
+                            class="p-auto">
+                        
                     </div>
 
-                    <img src="assets/images/Logo-Walk-with-me.png" alt="site logo" style="max-height: 100px"
-                        class="py-2 px-2">
-
-                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                        data-target="navbarBasicExample">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
+                 
+                   
                 </div>
 
 
-                <div class="navbar-menu" id="nav-links">
+                <div class="navbar-menu is-active" id="nav-links">
                     <div class="navbar-end">
                         <div class="navbar-item">
                             <div class="buttons">
@@ -54,7 +43,7 @@
                         </div>
             </nav>
 
-        </div>
+        
     </header>
     <!--hero area-->
     <section class="hero hero-landing is-large">
@@ -62,12 +51,13 @@
             <div class="hero-body">
                 <div class="container">
 
-                    <h1 class="title is-2 is-bold is-white"> Walk With Me </h1>
-                    <h2 class="subtitle is-6 is active">
+                    <h1 class="title is-1 has-text-primary"> Walk With Me </h1>
+                    <h2 class="subtitle is-3 is active has-text-black">
                         Search for parks in your desired area and get the weather forecast for the day.
                     </h2>
                     <div class="control is-active">
-                        <input class="input is-large" type="text" id="search-location-1" placeholder="Search for a park">
+                        <input class="input is-large" type="text" id="search-location-1"
+                            placeholder="Search for a park">
                         <button class="button is-large is-primary" id="search-btn-1">Search</button>
                     </div>
                 </div>
@@ -82,12 +72,18 @@
     <!--Placeholder section for Weather Map-->
     <section class="section">
         <div class="container">
-            <div class="columns">
-                <div class="column is-6">
-                    <h1 class="is-size-1">Map</h1>
-                    <div id="map"></div>
-                </div>
-            </div>
+    
+            <h1 class="is-size-2 is-family-secondary has-text-centered">Park Map</h1>
+            <h2 class="subtitle is-5 is active has-text-black has-text-centered">
+                Explore the beauty of our city's parks
+            </h2>
+            <div id="map"></div>
+            <style>
+                #map {
+                    height: 400px;
+                    width: 1400px;
+                }
+            </style>
         </div>
     </section>
     <!--Parks Cards-->
@@ -113,14 +109,11 @@
                         </div>
                         <div class="card-content">
                             <div class="content">
-                                <p class="subtitle">Park</p>
+                                <p class="subtitle">Use the Search Bar to find your local parks.</p>
                                 <p>
-                                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit
-                                    non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis
-                                    parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet
-                                    fermentum.
+                                    
                                 </p>
-                                <a href="#" class="has-text-primary">link</a>
+                               
                             </div>
                         </div>
                     </div>
@@ -135,14 +128,11 @@
                         </div>
                         <div class="card-content">
                             <div class="content">
-                                <p class="subtitle">Park</p>
+                                <p class="subtitle">Use the Search Bar to find your local parks.</p>
                                 <p>
-                                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit
-                                    non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis
-                                    parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet
-                                    fermentum.
+                                    
                                 </p>
-                                <a href="#" class="has-text-primary">link</a>
+                                
                             </div>
                         </div>
                     </div>
@@ -157,14 +147,11 @@
                         </div>
                         <div class="card-content">
                             <div class="content">
-                                <p class="subtitle">Park</p>
+                                <p class="subtitle">Use the Search Bar to find your local parks.</p>
                                 <p>
-                                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit
-                                    non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis
-                                    parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet
-                                    fermentum.
+                                   
                                 </p>
-                                <a href="#" class="has-text-primary">link</a>
+                               
                             </div>
                         </div>
                     </div>
@@ -173,12 +160,12 @@
         </div>
     </div>
 
-       <!--Weather Cards Section-->
+    <!--Weather Cards Section-->
     <div class="section has-background-dark-ter">
-        <div class="container">
+        <div class="container-weather">
             <div class="columns is-centered">
                 <div class="column is-half">
-                    <h2 class="is-size-2 is-family-secondary has-text-centered">5 day forcast</h2>
+                    <h2 class="is-size-2 is-family-secondary has-text-centered">5 handy walking tips</h2>
                     <p class="has-text-centered">
                         placeholder.
                     </p>
@@ -208,7 +195,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="column is-3">
                     <div class="card">
                         <div class="card-image">
@@ -303,37 +290,39 @@
     </div>
 
 
- <!--Fast Fact Cards-->
- <div class="section has-background-white-ter">
-    <div class="container">
-        <div class="columns is-centered">
-            <div class="column is-half" id="fast_fact"> 
+    <!--Fast Fact Cards-->
+    <div class="section has-background-white-ter">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half" id="fast_fact">
 
-                <h2 class="is-size-2 is-family-secondary has-text-centered">Fast Fast Generator</h2>
-                <p class="has-text-centered">
-                    How many facts would you like to see
-                </p>
-                <div class="sec_1" role="dialog">
-                    <div class="card-body">
-                                                  
-                        <input class="input is-large" type="number" id="num_facts" placeholder="Enter your number ">
-                        
-                        <small class="subtitle"  id="max-fact" > MAX:30</Main></small>
-                    </div>
-                    <div class="buttons">
-                        <button type="button" class="generate_btn button is-primary" >Generate</button>
-                    </div>
-                    <div class="facts">
-                        <table>
-                            <td><p></p></td>
-                        </table>
+                    <h2 class="is-size-2 is-family-secondary has-text-centered">Fast Fast Generator</h2>
+                    <p class="has-text-centered">
+                        How many facts would you like to see
+                    </p>
+                    <div class="sec_1" role="dialog">
+                        <div class="card-body">
+
+                            <input class="input is-large" type="number" id="num_facts" placeholder="Enter your number ">
+
+                            <small class="subtitle" id="max-fact"> MAX:30</Main></small>
+                        </div>
+                        <div class="buttons">
+                            <button type="button" class="generate_btn button is-primary">Generate</button>
+                        </div>
+                        <div class="facts">
+                            <table>
+                                <td>
+                                    <p></p>
+                                </td>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
-<!--ADD FAST FACT BUTTON-->
+            <!--ADD FAST FACT BUTTON-->
             <div class="columns mt-3">
                 <div class="column is-4">
                     <div class="card">
@@ -408,22 +397,23 @@
         </div>
     </div>
 
-        <!-- Footer section start from here -->
-        <footer class="footer">
-            <div class="content has-text-centered">
-                <p>
-                    <strong>Walk With Me</strong> by <a href="https://github.com/dom-jackson">Dom Jackson</a>, <a
-                        href="https://github.com/doitnowdon">Don Ishan</a>, <a href="https://github.com/Lferg98">Lachlan
-                        Ferguson</a> and <a href="https://github.com/TaniaC97">Tania Chahal</a> The source code is
-                    licensed
-                    <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
-                </p>
-            </div>
-        </footer>
+    <!-- Footer section start from here -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Walk With Me</strong> by <a href="https://github.com/dom-jackson">Dom Jackson</a>, <a
+                    href="https://github.com/doitnowdon">Don Ishan</a>, <a href="https://github.com/Lferg98">Lachlan
+                    Ferguson</a> and <a href="https://github.com/TaniaC97">Tania Chahal</a> The source code is
+                licensed
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            </p>
+        </div>
+    </footer>
 
-    
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVSCWM9Z_5IKTL7p2jfUX5H9W-LbBK_VM&libraries=places&callback=initMap"
-async defer></script>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVSCWM9Z_5IKTL7p2jfUX5H9W-LbBK_VM&libraries=places&callback=initMap"
+        async defer></script>
     <script src="./script.js"></script>
 
 
