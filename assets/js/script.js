@@ -57,7 +57,7 @@ function getForecastApi(){
     console.log(locationKey);
     var dateArray;
     var newDate;
-    var weatherContent = document.querySelector('.container-weather');
+    var weatherContent = document.querySelector('.container-weather'); // change this class
     
     
 
@@ -114,7 +114,8 @@ function getForecastApi(){
 
             // card container for the weather forecast body 
             var resultCard = document.createElement('div'); // card // csss for this card  // use addclass on this dov class =  content
-            var content = document.querySelector('column is-3')
+           
+            var content = document.querySelector('column is-one-fifth') // change this card name
             resultCard.classList.add('container-weather','card', 'card-content','content');
             
             // body container for forecast content 
@@ -137,7 +138,7 @@ function getForecastApi(){
             
 
 
-
+            
             bodyContentEl.innerHTML = '<strong>Date:</strong>' + newDate + '<br/>';
             bodyContentEl.innerHTML += '<strong>Maximum Temp:</strong>' + maxTemp + '</br>';
             bodyContentEl.innerHTML += '<strong>Minimum Temp:</strong>' + minTemp + '</br>';
