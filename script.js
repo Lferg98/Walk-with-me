@@ -112,21 +112,28 @@ function getForecastApi(){
             console.log(nightDesc);
             console.log(icon);
 
+            
             // card container for the weather forecast body 
             var resultCard = document.createElement('div'); // card // csss for this card  // use addclass on this dov class =  content
-            resultCard.classList.add('content');
+            var content = document.querySelector('column is-3')
+            resultCard.classList.add('container-weather','card', 'card-content','content');
+            
             // body container for forecast content 
-            var resultBody = document.createElement('div'); // body of the card // css for body card 
+            var resultBody = document.createElement("div"); // body of the card // css for body card 
 
             resultCard.append(resultBody); // appends the body to that card 
 
             var titleEl = document.createElement('h3'); // creates the elemnets fior the body
             titleEl.textContent = "Weather Forecast";
             
-            var img = document.createElement('img'); // revert to previous  and then addclass image is -4by3
-            img.classList.add('image is-4by3');
+            var img = document.createElement("img"); // revert to previous  and then addclass image is -4by3
+            
+            img.classList.add('container-weather','card','card-image');
+          
             img.src = icon;
-            var bodyContentEl = document.createElement('p')
+
+
+            var bodyContentEl = document.createElement('p') 
 
             bodyContentEl.innerHTML = '<strong>Date:</strong>' + newDate + '<br/>';
             bodyContentEl.innerHTML += '<strong>Maximum Temp:</strong>' + maxTemp + '</br>';
@@ -163,24 +170,23 @@ function initMap() {
     map: map,
   });
 // Move map to users search location
-  function moveToLocation() {
-    if (!locationSaved) {
-      locationSaved = true;
-      var location = document.getElementById("search-location-1").value;
+function moveToLocation() {
+  var location = document.getElementById("search-location-1").value;
+  if (!searches.includes(location)) {
       searches.push(location);
       localStorage.setItem('Location Search', JSON.stringify(searches));
-    var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ address: location }, function (results, status) {
+  }
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ address: location }, function (results, status) {
       if (status === "OK") {
-        map.setCenter(results[0].geometry.location);
-        locationResults = results[0].geometry.location;
-        searchWalkingTrails();
+          map.setCenter(results[0].geometry.location);
+          locationResults = results[0].geometry.location;
+          searchWalkingTrails();
       } else {
-        alert("Geocode was not successful for this location");
+          alert("Geocode was not successful for this location");
       }
-    });
-  }
-  }
+  });
+}
 // searches location area for results with the type "park"
   function searchWalkingTrails() {
     var request = {
