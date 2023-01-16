@@ -112,32 +112,6 @@ function getForecastApi(){
             console.log(nightDesc);
             console.log(icon);
 
-
-            
-
-
-              // card container for the weather forecast body 
-              var resultCard = document.createElement('div'); // card // csss for this card  // use addclass on this dov class =  content
-              var content = document.querySelector('column is-3')
-              resultCard.classList.add('container-weather','card', 'card-content','content');
-              
-              // body container for forecast content 
-              var resultBody = document.createElement("div"); // body of the card // css for body card 
-  
-              resultCard.append(resultBody); // appends the body to that card 
-  
-              var titleEl = document.createElement('h3'); // creates the elemnets fior the body
-              titleEl.textContent = "Weather Forecast";
-              
-              var img = document.createElement("img"); // revert to previous  and then addclass image is -4by3
-              
-              img.classList.add('container-weather','card','card-image');
-            
-              img.src = icon;
-  
-  
-              var bodyContentEl = document.createElement('p') 
-
             // card container for the weather forecast body 
             var resultCard = document.createElement('div'); // card // csss for this card  // use addclass on this dov class =  content
             var content = document.querySelector('column is-3')
@@ -160,7 +134,7 @@ function getForecastApi(){
 
 
             var bodyContentEl = document.createElement('p') 
-            var bodyContentEl = document.createElement('p')
+            
 
 
 
@@ -283,7 +257,12 @@ generateBtn.addEventListener("click", function(){
    .then(data => {
        var factsRes = JSON.parse(data);
        console.log(factsRes);
-       let para = document.createElement("p");
+       let para = document.createElement("li");
+       para.classList.add("has-text-black");
+       para.classList.add("py-4");
+       para.classList.add("px-4");
+       para.classList.add("b-4");
+      
        let node = document.createTextNode(factsRes[0].fact);
        para.appendChild(node);
 
@@ -301,7 +280,8 @@ btn.innerHTML = 'Clear';
 btn.classList.add("btn");
 btn.classList.add("clear");
 btn.classList.add("button");
-btn.classList.add("is-danger")
+btn.classList.add("is-danger");
+
 var clear = document.querySelector(".sec_1");
 clear.appendChild(btn);
 
@@ -320,10 +300,3 @@ var clear_btn = document.querySelector('.clear');
    
 })
 
-// mobile menu
-const burgerIcon = document.querySelector('.burger');
-const navbarMenu = document.querySelector('.navbar-links');
-
-burgerIcon.addEventListener('click', () => {
-    navbarMenu.classList.toggle('is-active');
-});
