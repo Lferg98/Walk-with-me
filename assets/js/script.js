@@ -30,7 +30,7 @@ function getApi(searchValue){
 
     //console.log(searchValue); 
     city = searchValue;
-    var requestUrl = "http://dataservice.accuweather.com/locations/v1/cities/autocomplete?q=" + city + "&apikey=" + apiKey;
+    var requestUrl = "//dataservice.accuweather.com/locations/v1/cities/autocomplete?q=" + city + "&apikey=" + apiKey;
 
     fetch(requestUrl)
     .then(function(response){
@@ -64,7 +64,7 @@ function getForecastApi(){
     // make call to another api using location key
 
     //var apiKey = "IIgtBoGEsnf68Me23pXpWGZnkn5vaiyA";
-    var requestUrl = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/" + locationKey + "?apikey=" + apiKey;
+    var requestUrl = "//dataservice.accuweather.com/forecasts/v1/daily/5day/" + locationKey + "?apikey=" + apiKey;
 
     fetch(requestUrl)
     .then(function(response){
